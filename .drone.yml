@@ -8,11 +8,9 @@ platform:
 steps:
 - name: build
   image: plugins/docker
-  environment:
-    TOKEN:
-      from_secret: TOKEN
   settings:
     username: gitlab-ci-token
-    password: $TOKEN
+    password:
+      from_secret: TOKEN
     repo: yasser.isam/oidc
     registry: registry.gitlab.com

@@ -13,7 +13,7 @@ steps:
       from_secret: TOKEN
   commands:
   - echo $TOKEN
-  - docker login registry.gitlab.com -u gitlab-ci-token -p $TOKEN
-  - docker build -t registry.gitlab.com/yasser.isam/oidc
+  - docker login registry.gitlab.com -u gitlab-ci-token -p $TOKEN 
+  - docker build -t registry.gitlab.com/yasser.isam/oidc .
   - docker push registry.gitlab.com/yasser.isam/oidc
 

@@ -9,8 +9,8 @@ steps:
 - name: build
   image: docker:stable
   commands:
-  - echo ${CI_BUILD_TOKEN}
-  - docker login registry.gitlab.com -u gitlab-ci-token -p ${CI_BUILD_TOKEN}
+  - echo $TOKEN
+  - docker login registry.gitlab.com -u gitlab-ci-token -p $TOKEN
   - docker build -t registry.gitlab.com/yasser.isam/oidc
   - docker push registry.gitlab.com/yasser.isam/oidc
 

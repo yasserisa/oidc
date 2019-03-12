@@ -1,0 +1,13 @@
+django
+django-environ
+rollbar
+requests
+mysqlclient
+django-cors-headers
+django-oidc-provider
+geoip2
+django-redis
+gunicorn
+gevent
+json-logging-py
+jsonschema

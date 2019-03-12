@@ -1,0 +1,10 @@
+Django==1.9
+future==0.15.2
+MySQL-python==1.2.5
+pycrypto==2.6.1
+pycryptodome==3.4
+pyjwkest==1.1.7
+requests==2.10.0
+rollbar==0.13.2
+six==1.10.0
+

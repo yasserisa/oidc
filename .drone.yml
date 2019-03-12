@@ -8,6 +8,9 @@ platform:
 steps:
 - name: build
   image: docker:stable
+  environment:
+    TOKEN:
+      from_secret: TOKEN
   commands:
   - echo $TOKEN
   - docker login registry.gitlab.com -u gitlab-ci-token -p $TOKEN

@@ -1,0 +1,33 @@
+kind: pipeline
+name: build
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build
+  image: docker:stable
+  commands:
+  - docker login registry.gitlab.com -u gitlab-ci-token -p $CI_BUILD_TOKEN
+  - docker build --build-arg REPO=git.gob.cl/claveunica/oidc.git --build-arg CREDENTIALS_GIT=gitlab-ci-token:$CI_BUILD_TOKEN -t registry.gitlab.com/yasser.isam/oidc:$CI_COMMIT_REF_NAME -t registry.gitlab.com/yasser.isam/oidc:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA .
+  - docker push registry.gitlab.com/yasser.isam/oidc:$CI_COMMIT_REF_NAME
+  - docker push registry.gitlab.com/yasser.isam/oidc:$CI_COMMIT_REF_NAME-$CI_COMMIT_SHA
+
+---
+kind: pipeline
+name: code_quality
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: code_quality
+  image: docker:stable
+  commands:
+  - "export SP_VERSION=$(echo \"$CI_SERVER_VERSION\" | sed 's/^\\([0-9]*\\)\\.\\([0-9]*\\).*/\\1-\\2-stable/')"
+  - "docker run --env SOURCE_CODE=\"$PWD\" --volume \"$PWD\":/code --volume /var/run/docker.sock:/var/run/docker.sock \"registry.gitlab.com/gitlab-org/security-products/codequality:$SP_VERSION\" /code"
+
+depends_on:
+- build

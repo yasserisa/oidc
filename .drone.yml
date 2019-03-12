@@ -11,9 +11,8 @@ steps:
   environment:
     TOKEN:
       from_secret: TOKEN
-  commands:
-  - echo $TOKEN
-  - docker login registry.gitlab.com -u gitlab-ci-token -p $TOKEN 
-  - docker build -t registry.gitlab.com/yasser.isam/oidc .
-  - docker push registry.gitlab.com/yasser.isam/oidc
-
+  settings:
+    username: gitlab-ci-token
+    password: $TOKEN
+    repo: yasser.isam/oidc
+    registry: registry.gitlab.com

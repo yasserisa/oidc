@@ -1,4 +1,4 @@
-ClaveUnica - OpenID Connect Identity Provider
+
 --------
 
 Identity Provider del estado, es un sistema SSO (Single Sign On) que utiliza el protocolo OpenID Connect

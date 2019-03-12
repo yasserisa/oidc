@@ -12,5 +12,5 @@ steps:
     username: gitlab-ci-token
     password:
       from_secret: TOKEN
-    repo: yasser.isam/oidc
+    repo: registry.gitlab.com/yasser.isam/oidc
     registry: registry.gitlab.com

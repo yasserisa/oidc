@@ -7,10 +7,10 @@ steps:
   settings:
     tags: latest
   enviroment:
-    value:
+    VALUE:
       from_secret: value
   commands:
-    - cat ${value}
+    - cat ${VALUE}
 ---
 kind: secret
 name: value

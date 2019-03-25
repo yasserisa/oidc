@@ -6,10 +6,11 @@ steps:
   image: debian
   settings:
     tags: latest
-    value:
-      from_secret: value
+   enviroment:
+      value:
+        from_secret: value
   commands:
-    - cat $value
+    - cat ${value}
 ---
 kind: secret
 name: value

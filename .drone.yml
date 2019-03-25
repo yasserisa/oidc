@@ -8,10 +8,14 @@ steps:
     GOOS: linux
     GOARCH: amd64
     CGO_ENABLED: 0
+    USERNAME:
+      from_secret: username
+    PASSWORD:
+      from_secret: password
 
   commands:
     - echo $GOOS
-    - echo ${GOOS}
+    - echo $USERNAME
     - echo ${RPUEBA_1}
     - echo ${username}
     - echo ${password}

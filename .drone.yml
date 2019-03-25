@@ -2,7 +2,7 @@ kind: pipeline
 name: master
 
 steps:
-- name: build
+- name: master
   image: debian
   settings:
     tags: latest

@@ -6,13 +6,13 @@ steps:
   image: debian
   settings:
     tags: latest
-    username:
-      from_secret: username
+    value:
+      from_secret: value
   commands:
-    - cat ${username}
+    - cat ${value}
 ---
 kind: secret
-name: username
+name: value
 get:
   path: secret/message
   name: value

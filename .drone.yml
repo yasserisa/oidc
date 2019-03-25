@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: variable
+- name: build
   image: debian
   settings:
     tags: latest

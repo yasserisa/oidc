@@ -10,7 +10,7 @@ steps:
       from_secret: username
   commands:
     - cat ${username}
----
+
 kind: secret
 name: username
 get:

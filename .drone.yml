@@ -6,12 +6,12 @@ steps:
   image: debian
   environment:
     PRUEBA_1: valor
-    PRUEBA:
+    value:
       from_secret: value
   commands:
     - export VALOR=1
     - echo $VALOR
-    - echo $PRUEBA
+    - echo $value
     - echo $PRUEBA_1
 ---
 kind: secret

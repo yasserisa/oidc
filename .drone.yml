@@ -1,5 +1,5 @@
 kind: pipeline
-name: build
+name: master
 
 steps:
 - name: build

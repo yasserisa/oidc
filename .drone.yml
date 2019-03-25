@@ -4,16 +4,14 @@ name: default
 steps:
 - name: build
   image: debian
-  settings:
-    repo: octocat/server
-    tags: latest
-    username:
-      from_secret: username
-    password:
-      from_secret: password
+  environment:
+    GOOS: linux
+    GOARCH: amd64
+    CGO_ENABLED: 0
+
   commands:
-    - export VALOR=1
-    - echo $VALOR
+    - echo $GOOS
+    - echo ${GOOS}
     - echo ${RPUEBA_1}
     - echo ${username}
     - echo ${password}

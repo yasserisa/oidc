@@ -11,9 +11,9 @@ steps:
     - echo $USERNAME
 
 ---
-kind: s1ecret
+kind: secret
 name: username
 get:
-  path: secre1t/docker
+  path: secret/docker
   name: username
 

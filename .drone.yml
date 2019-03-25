@@ -4,17 +4,15 @@ name: default
 steps:
 - name: build
   image: debian
-  settings:
-    tags: latest
   enviroment:
-    PRUEBA: valor
-    VALUE:
+    PRUEBA_1: valor
+    PRUEBA:
       from_secret: value
   commands:
     - export VALOR=1
     - echo $VALOR
-    - echo $${VALUE}
-    - echo ${PRUEBA}
+    - echo $PRUEBA
+    - echo $PRUEBA_1
 ---
 kind: secret
 name: value

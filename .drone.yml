@@ -6,16 +6,27 @@ steps:
   image: debian
   environment:
     PRUEBA_1: valor
-    value:
-      from_secret: value
+    username:
+      from_secret: username
+    password:
+      from_secret: password
   commands:
     - export VALOR=1
     - echo $VALOR
-    - echo $value
-    - echo $PRUEBA_1
+    - echo $RPUEBA_1
+    - echo $username
+    - echo $password
+
 ---
 kind: secret
-name: value
+name: username
 get:
-  path: secret/message
-  name: value
+  path: secret/docker
+  name: username
+
+---
+kind: secret
+name: password
+get:
+  path: secret/docker
+  name: password

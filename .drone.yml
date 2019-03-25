@@ -7,15 +7,20 @@ steps:
   environment:
     USERNAME:
       from_secret: docker_username
+    PASSWORD:
+      from_secret: docker_password
 
   commands:
     - echo $USERNAME
+    - echo ${USERNAME}
+    - echo $PASSWORD
+    - echo ${PASSWORD}
 
 
 secrets:
   docker_username:
     external:
-      name: secret/docker#username
+      name: secret/data/docker#username
 
   docker_password:
     external:

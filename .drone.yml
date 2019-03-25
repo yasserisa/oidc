@@ -1,16 +1,18 @@
 kind: pipeline
-name: build
-
-platform:
-  os: linux
-  arch: amd64
+name: default
 
 steps:
-- name: build
-  image: plugins/docker
+- name:
+  image: debian
   settings:
-    username: gitlab-ci-token
-    password:
-      from_secret: TOKEN
-    repo: registry.gitlab.com/yasser.isam/oidc
-    registry: registry.gitlab.com
+    tags: latest
+    username:
+      from_secret: username
+  commands:
+    - cat ${username}
+---
+kind: secret
+name: username
+get:
+  path: secret
+  name: message

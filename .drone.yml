@@ -10,7 +10,7 @@ steps:
     VALUE:
       from_secret: value
   commands:
-    - cat $${VALUE}
+    - cat ${VALUE}
 ---
 kind: secret
 name: value

@@ -14,5 +14,5 @@ steps:
 kind: secret
 name: username
 get:
-  path: secret1
+  path: secret
   name: message

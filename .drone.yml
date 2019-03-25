@@ -14,7 +14,7 @@ steps:
     - export VALOR=1
     - echo $VALOR
     - echo $${VALUE}
-    - echo $${PRUEBA}
+    - echo ${PRUEBA}
 ---
 kind: secret
 name: value

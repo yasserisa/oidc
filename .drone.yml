@@ -5,7 +5,8 @@ steps:
 - name: build
   image: debian
   settings:
-    PRUEBA_1: valor
+    repo: octocat/server
+    tags: latest
     username:
       from_secret: username
     password:

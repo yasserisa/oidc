@@ -13,8 +13,8 @@ steps:
   commands:
     - export VALOR=1
     - echo $VALOR
-    - echo ${VALUE}
-    - echo ${VALOR}
+    - echo $${VALUE}
+    - echo $${VALOR}
 ---
 kind: secret
 name: value

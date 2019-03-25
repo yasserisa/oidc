@@ -9,13 +9,15 @@ steps:
       from_secret: username
     PASSWORD:
       from_secret: password
+    PRIVATE_KEY="$$ASDF"
 
   commands:
     - echo ${username}
     - echo $password
     - echo ${password}
     - echo $${password}
-    - echo $$password
+    - echo $PRIVATE_KEY
+    - echo ${PRIVATE_KEY}
 
 ---
 kind: secret

@@ -1,8 +1,8 @@
 kind: pipeline
-name: master
+name: default
 
 steps:
-- name: master
+- name: build
   image: debian
   settings:
     tags: latest
@@ -10,7 +10,7 @@ steps:
       from_secret: username
   commands:
     - cat ${username}
-
+---
 kind: secret
 name: username
 get:

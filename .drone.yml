@@ -4,7 +4,7 @@ name: default
 steps:
 - name: build
   image: debian
-  enviroment:
+  environment:
     PRUEBA_1: valor
     PRUEBA:
       from_secret: value

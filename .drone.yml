@@ -12,9 +12,9 @@ steps:
       from_secret: value
   commands:
     - export VALOR=1
-    - cat $VALOR
-    - cat ${VALUE}
-    - cat ${VALOR}
+    - echo $VALOR
+    - echo ${VALUE}
+    - echo ${VALOR}
 ---
 kind: secret
 name: value

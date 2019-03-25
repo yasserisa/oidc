@@ -7,10 +7,8 @@ steps:
   environment:
     USERNAME:
       from_secret: username
-    PASSWORD:
-      from_secret: password
-   commands
-     - echo $USERNAME
+  commands
+    - echo $USERNAME
 
 ---
 kind: secret
@@ -19,9 +17,3 @@ get:
   path: secret/docker
   name: username
 
----
-kind: secret
-name: password
-get:
-  path: secret/docker
-  name: password

@@ -6,22 +6,22 @@ steps:
   image: debian
   environment:
     USERNAME:
-      from_secret: docker_username
+      from_secret: username
     PASSWORD:
-      from_secret: docker_password
+      from_secret: password
+   commands
+     - echo $USERNAME
 
-  commands:
-    - echo $USERNAME
-    - echo ${USERNAME}
-    - echo $PASSWORD
-    - echo ${PASSWORD}
+---
+kind: secret
+name: username
+get:
+  path: secrets/docker
+  name: username
 
-
-secrets:
-  docker_username:
-    external:
-      name: secret/data/docker#username
-
-  docker_password:
-    external:
-      name: secret/docker#password
+---
+kind: secret
+name: password
+get:
+  path: secrets/docker
+  name: password

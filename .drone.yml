@@ -9,6 +9,7 @@ steps:
       $secret: docker_username
   commands:
     - echo $username
+    
 ---
 kind: secret
 type: external

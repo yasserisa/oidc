@@ -5,15 +5,14 @@ steps:
 - name: build
   image: debian
   environment:
-    USERNAME:
-      from_secret: username
+    username:
+      $secret: docker_username
   commands:
-    - echo $USERNAME
+    - echo $username
 
 ---
 kind: secret
-name: username
-get:
-  path: secret/docker
-  name: username
-
+type: external
+data:
+  docker_password: "secret/docker#password"
+  docker_username: "secret/docker#username"
